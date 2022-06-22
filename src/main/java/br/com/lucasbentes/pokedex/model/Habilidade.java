@@ -18,4 +18,28 @@ public class Habilidade {
     @ManyToOne
     @JsonIgnoreProperties("habilidade")
     private Pokemon pokemon;
+
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public String getNomeHabilidade() {
+        return nomeHabilidade;
+    }
+
+    public void setNomeHabilidade(String nomeHabilidade) {
+        this.nomeHabilidade = nomeHabilidade;
+    }
+
+    public Pokemon getPokemon() {
+        return pokemon;
+    }
+
+    public void setPokemon(Pokemon pokemon) {
+        this.pokemon = pokemon;
+    }
 }

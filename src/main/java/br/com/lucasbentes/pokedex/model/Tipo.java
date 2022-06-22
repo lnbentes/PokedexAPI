@@ -21,4 +21,36 @@ public class Tipo {
     @ManyToOne
     @JsonIgnoreProperties("tipo")
     private Pokemon pokemon;
+
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public String getNomeTipo() {
+        return nomeTipo;
+    }
+
+    public void setNomeTipo(String nomeTipo) {
+        this.nomeTipo = nomeTipo;
+    }
+
+    public String getFotoTipo() {
+        return fotoTipo;
+    }
+
+    public void setFotoTipo(String fotoTipo) {
+        this.fotoTipo = fotoTipo;
+    }
+
+    public Pokemon getPokemon() {
+        return pokemon;
+    }
+
+    public void setPokemon(Pokemon pokemon) {
+        this.pokemon = pokemon;
+    }
 }
