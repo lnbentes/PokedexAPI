@@ -22,6 +22,9 @@ public class Tipo {
     @JsonIgnoreProperties("tipo")
     private Pokemon pokemon;
 
+    /*
+    Os gets e sets
+     */
     public Long getIdCliente() {
         return idCliente;
     }

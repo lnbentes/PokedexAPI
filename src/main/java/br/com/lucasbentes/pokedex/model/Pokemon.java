@@ -46,7 +46,9 @@ public class Pokemon {
     @JsonIgnoreProperties("pokemon")
     private List<Habilidade> habilidade;
 
-
+    /*
+    Os gets e sets
+     */
     public Long getIdCliente() {
         return idCliente;
     }
