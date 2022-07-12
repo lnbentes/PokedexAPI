@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class Tipo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCliente;
+    private Long idTipo;
 
     @NotNull
     private String nomeTipo;
@@ -25,12 +25,12 @@ public class Tipo {
     /*
     Os gets e sets
      */
-    public Long getIdCliente() {
-        return idCliente;
+    public Long getIdTipo() {
+        return idTipo;
     }
 
-    public void setIdCliente(Long idCliente) {
-        this.idCliente = idCliente;
+    public void setIdTipo(Long idTipo) {
+        this.idTipo = idTipo;
     }
 
     public String getNomeTipo() {
