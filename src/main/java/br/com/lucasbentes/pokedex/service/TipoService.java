@@ -32,7 +32,7 @@ public class TipoService {
         logger.info("Updating one person!");
 
         return repository.findByTipoContainingIgnoreCase(tipo)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found this ID"));
+                .orElseThrow(() -> new ResourceNotFoundException("No records found this Type"));
 
     }
 

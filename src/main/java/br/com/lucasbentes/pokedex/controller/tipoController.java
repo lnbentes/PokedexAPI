@@ -4,9 +4,7 @@ import br.com.lucasbentes.pokedex.model.Tipo;
 import br.com.lucasbentes.pokedex.repository.TipoRepository;
 import br.com.lucasbentes.pokedex.service.TipoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +22,7 @@ public class tipoController {
 
     @RequestMapping(method=RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Tipo> fingAll(){
+    public List<Tipo> findAll(){
         return service.findAll();
     }
 
