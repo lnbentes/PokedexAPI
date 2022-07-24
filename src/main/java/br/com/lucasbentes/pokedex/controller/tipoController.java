@@ -15,9 +15,6 @@ import java.util.List;
 public class tipoController {
 
     @Autowired
-    private TipoRepository tipoRepository;
-
-    @Autowired
     private TipoService service;
 
     @RequestMapping(method=RequestMethod.GET,

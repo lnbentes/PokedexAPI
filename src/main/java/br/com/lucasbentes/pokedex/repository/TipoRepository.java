@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface TipoRepository extends JpaRepository<Tipo, Long> {
 
-    public Optional<Tipo> findByTipoContainingIgnoreCase(String tipo);
+    Optional<Tipo> findByTipoContainingIgnoreCase(String tipo);
 
 }

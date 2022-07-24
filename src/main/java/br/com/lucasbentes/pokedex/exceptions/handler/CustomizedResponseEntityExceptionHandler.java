@@ -1,7 +1,7 @@
 package br.com.lucasbentes.pokedex.exceptions.handler;
 
-import br.com.lucasbentes.crud.exceptions.ExceptionResponse;
-import br.com.lucasbentes.crud.exceptions.ResourceNotFoundException;
+import br.com.lucasbentes.pokedex.exceptions.ExceptionResponse;
+import br.com.lucasbentes.pokedex.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

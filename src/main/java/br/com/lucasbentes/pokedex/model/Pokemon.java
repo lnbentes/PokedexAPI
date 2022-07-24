@@ -13,7 +13,7 @@ public class Pokemon {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCliente;
+    private Long id;
 
     @NotNull
     private String nome;
@@ -49,12 +49,12 @@ public class Pokemon {
     /*
     Os gets e sets
      */
-    public Long getIdCliente() {
-        return idCliente;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdCliente(Long idCliente) {
-        this.idCliente = idCliente;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
