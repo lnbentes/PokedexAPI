@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface HabilidadeRepository extends JpaRepository<Habilidade, Long> {
 
-    Optional<Habilidade> findByHabilidadeContainingIgnoreCase(String habilidade);
+    Optional<Habilidade> findByNomeHabilidadeContainingIgnoreCase(String habilidade);
 
 }

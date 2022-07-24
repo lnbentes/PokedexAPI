@@ -22,7 +22,7 @@ public class HabilidadeService {
     }
 
     public Habilidade findByAbility(String ability){
-        return repository.findByHabilidadeContainingIgnoreCase(ability)
+        return repository.findByNomeHabilidadeContainingIgnoreCase(ability)
                 .orElseThrow(() -> new ResourceNotFoundException("No records found this ability"));
     }
 

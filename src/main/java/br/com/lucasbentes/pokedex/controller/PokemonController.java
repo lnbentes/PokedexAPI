@@ -1,8 +1,7 @@
 package br.com.lucasbentes.pokedex.controller;
 
-import br.com.lucasbentes.pokedex.model.Tipo;
-import br.com.lucasbentes.pokedex.repository.TipoRepository;
-import br.com.lucasbentes.pokedex.service.TipoService;
+import br.com.lucasbentes.pokedex.model.Pokemon;
+import br.com.lucasbentes.pokedex.service.PokemonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -10,45 +9,44 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/tipo")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-public class tipoController {
+@RequestMapping("/pokemon")
+public class PokemonController {
 
     @Autowired
-    private TipoService service;
+    private PokemonService service;
 
-    @RequestMapping(method=RequestMethod.GET,
+    @RequestMapping(method= RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Tipo> findAll(){
+    public List<Pokemon> findAll(){
         return service.findAll();
     }
 
     @RequestMapping(value = "/{id}",
             method=RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Tipo findById(@PathVariable(value = "id") Long id){
+    public Pokemon findById(@PathVariable(value = "id") Long id){
         return service.findById(id);
     }
 
-    @RequestMapping(value = "/{tipo}",
+    @RequestMapping(value = "/{pokemon}",
             method=RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Tipo findByTipo(@PathVariable(value = "tipo") String tipo){
-        return service.findByTipo(tipo);
+    public List<Pokemon> findByPokemon(@PathVariable(value = "pokemon") String pokemon){
+        return service.findByPokemon(pokemon);
     }
 
     @RequestMapping(method=RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Tipo post(@RequestBody Tipo tipo){
-        return service.create(tipo);
+    public Pokemon post(@RequestBody Pokemon pokemon){
+        return service.create(pokemon);
     }
 
     @RequestMapping(method=RequestMethod.PUT,
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Tipo put(@RequestBody Tipo tipo){
-        return service.update(tipo);
+    public Pokemon put(@RequestBody Pokemon pokemon){
+        return service.update(pokemon);
     }
 
     @RequestMapping(value = "/{id}",

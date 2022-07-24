@@ -10,8 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/habilidade")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-public class habilidadeController {
+public class HabilidadeController {
 
     @Autowired
     private HabilidadeService service;

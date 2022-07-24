@@ -18,31 +18,28 @@ public class TipoService {
     private Logger logger = Logger.getLogger(TipoService.class.getName());
 
     public List<Tipo> findAll(){
-        logger.info("Finding all people!");
+        logger.info("Finding all type!");
         return repository.findAll();
     }
 
     public Tipo findById(Long id){
-        logger.info("Finding one person!");
+        logger.info("Finding one type!");
         return repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No records found this ID"));
     }
 
-    public Tipo findByTipo(String tipo){
-        logger.info("Updating one person!");
-
-        return repository.findByTipoContainingIgnoreCase(tipo)
-                .orElseThrow(() -> new ResourceNotFoundException("No records found this Type"));
-
+    public List<Tipo> findByTipo(String tipo){
+        logger.info("Updating one type!");
+        return repository.findALLByNomeTipoContainingIgnoreCase(tipo);
     }
 
     public Tipo create(Tipo tipo) {
-        logger.info("Creating one person!");
+        logger.info("Creating one type!");
         return repository.save(tipo);
     }
 
     public Tipo update(Tipo tipo) {
-        logger.info("Updating one person!");
+        logger.info("Updating one type!");
 
         Tipo entity = repository.findById(tipo.getIdTipo())
                 .orElseThrow(() -> new ResourceNotFoundException("No records found this ID"));
@@ -53,7 +50,7 @@ public class TipoService {
     }
 
     public void delete(Long id) {
-        logger.info("Deleting one person!");
+        logger.info("Deleting one type!");
 
         Tipo entity = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No records found this ID"));
