@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/pokemon")
@@ -28,10 +29,10 @@ public class PokemonController {
         return service.findById(id);
     }
 
-    @RequestMapping(value = "/{pokemon}",
+    @RequestMapping(value = "/nome/{pokemon}",
             method=RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Pokemon> findByPokemon(@PathVariable(value = "pokemon") String pokemon){
+    public Optional<Pokemon> findByPokemon(@PathVariable(value = "pokemon") String pokemon){
         return service.findByPokemon(pokemon);
     }
 

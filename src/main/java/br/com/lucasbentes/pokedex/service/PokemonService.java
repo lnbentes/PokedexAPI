@@ -3,14 +3,17 @@ package br.com.lucasbentes.pokedex.service;
 import br.com.lucasbentes.pokedex.exceptions.ResourceNotFoundException;
 import br.com.lucasbentes.pokedex.model.Pokemon;
 import br.com.lucasbentes.pokedex.repository.PokemonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @Service
 public class PokemonService {
 
+    @Autowired
     private PokemonRepository repository;
 
     private Logger logger = Logger.getLogger(TipoService.class.getName());
@@ -26,7 +29,7 @@ public class PokemonService {
                 .orElseThrow(() -> new ResourceNotFoundException("No records found this ID"));
     }
 
-    public List<Pokemon> findByPokemon(String pokemon){
+    public Optional<Pokemon> findByPokemon(String pokemon){
         logger.info("Updating one pokemon!");
         return repository.findAllByNomeContainingIgnoreCase(pokemon);
     }

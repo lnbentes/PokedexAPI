@@ -19,15 +19,9 @@ public class Habilidade {
     @JsonIgnoreProperties("habilidade")
     private Pokemon pokemon;
 
-    /*
-    Os gets e sets
-     */
+
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNomeHabilidade() {

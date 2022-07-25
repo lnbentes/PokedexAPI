@@ -3,6 +3,7 @@ package br.com.lucasbentes.pokedex.service;
 import br.com.lucasbentes.pokedex.exceptions.ResourceNotFoundException;
 import br.com.lucasbentes.pokedex.model.Habilidade;
 import br.com.lucasbentes.pokedex.repository.HabilidadeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +11,8 @@ import java.util.List;
 @Service
 public class HabilidadeService {
 
-    HabilidadeRepository repository;
+    @Autowired
+    private HabilidadeRepository repository;
 
     public List<Habilidade> findALl(){
         return repository.findAll();

@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/tipo")
@@ -28,10 +29,10 @@ public class TipoController {
         return service.findById(id);
     }
 
-    @RequestMapping(value = "/{tipo}",
+    @RequestMapping(value = "/nome/{tipo}",
             method=RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Tipo> findByTipo(@PathVariable(value = "tipo") String tipo){
+    public Optional<Tipo> findByTipo(@PathVariable(value = "tipo") String tipo){
         return service.findByTipo(tipo);
     }
 

@@ -7,13 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @Service
 public class TipoService {
 
     @Autowired
-    TipoRepository repository;
+    private TipoRepository repository;
 
     private Logger logger = Logger.getLogger(TipoService.class.getName());
 
@@ -28,7 +29,7 @@ public class TipoService {
                 .orElseThrow(() -> new ResourceNotFoundException("No records found this ID"));
     }
 
-    public List<Tipo> findByTipo(String tipo){
+    public Optional<Tipo> findByTipo(String tipo){
         logger.info("Updating one type!");
         return repository.findALLByNomeTipoContainingIgnoreCase(tipo);
     }

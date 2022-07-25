@@ -28,7 +28,7 @@ public class HabilidadeController {
         return service.findById(id);
     }
 
-    @RequestMapping(value = "/{habilidade}",
+    @RequestMapping(value = "/nome/{habilidade}",
             method=RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Habilidade findByTipo(@PathVariable(value = "habilidade") String habilidade){
