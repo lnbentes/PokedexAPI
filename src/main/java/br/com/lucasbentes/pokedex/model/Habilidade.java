@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Table(name = "habilidade")
@@ -15,9 +16,9 @@ public class Habilidade {
     @NotNull
     private String nomeHabilidade;
 
-    @ManyToOne
+    @OneToMany(mappedBy = "habilidade", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("habilidade")
-    private Pokemon pokemon;
+    private List<Pokemon> pokemon;
 
 
     public Long getId() {
@@ -32,11 +33,11 @@ public class Habilidade {
         this.nomeHabilidade = nomeHabilidade;
     }
 
-    public Pokemon getPokemon() {
+    public List<Pokemon> getPokemon() {
         return pokemon;
     }
 
-    public void setPokemon(Pokemon pokemon) {
+    public void setPokemon(List<Pokemon> pokemon) {
         this.pokemon = pokemon;
     }
 }
