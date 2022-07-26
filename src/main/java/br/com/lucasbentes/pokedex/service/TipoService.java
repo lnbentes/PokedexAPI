@@ -42,7 +42,7 @@ public class TipoService {
     public Tipo update(Tipo tipo) {
         logger.info("Updating one type!");
 
-        Tipo entity = repository.findById(tipo.getIdTipo())
+        Tipo entity = repository.findById(tipo.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("No records found this ID"));
 
         entity.setNomeTipo(tipo.getNomeTipo());

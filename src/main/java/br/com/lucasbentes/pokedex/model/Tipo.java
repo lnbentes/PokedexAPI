@@ -25,7 +25,7 @@ public class Tipo {
     /*
     Os gets e sets
      */
-    public Long getIdTipo() {
+    public Long getId() {
         return id;
     }
 
