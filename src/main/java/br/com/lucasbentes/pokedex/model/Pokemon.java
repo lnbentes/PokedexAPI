@@ -38,13 +38,13 @@ public class Pokemon {
     @Size(max = 20)
     private String taxaGenero;
 
-    @OneToMany(mappedBy = "pokemon", cascade = CascadeType.REMOVE)
+    @ManyToOne
     @JsonIgnoreProperties("pokemon")
-    private List<Tipo> tipo;
+    private Tipo tipo;
 
-    @OneToMany(mappedBy = "pokemon", cascade = CascadeType.REMOVE)
+    @ManyToOne
     @JsonIgnoreProperties("pokemon")
-    private List<Habilidade> habilidade;
+    private Habilidade habilidade;
 
     /*
     Os gets e sets
@@ -117,19 +117,19 @@ public class Pokemon {
         this.taxaGenero = taxaGenero;
     }
 
-    public List<Tipo> getTipo() {
+    public Tipo getTipo() {
         return tipo;
     }
 
-    public void setTipo(List<Tipo> tipo) {
+    public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
 
-    public List<Habilidade> getHabilidade() {
+    public Habilidade getHabilidade() {
         return habilidade;
     }
 
-    public void setHabilidade(List<Habilidade> habilidade) {
+    public void setHabilidade(Habilidade habilidade) {
         this.habilidade = habilidade;
     }
 }
