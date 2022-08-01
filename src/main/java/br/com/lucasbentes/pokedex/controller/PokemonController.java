@@ -2,6 +2,7 @@ package br.com.lucasbentes.pokedex.controller;
 
 import br.com.lucasbentes.pokedex.model.Pokemon;
 import br.com.lucasbentes.pokedex.service.PokemonService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/pokemon")
+@Tag(name = "Pokémon", description = "Endpoints para gerenciar os Pokémons")
 public class PokemonController {
 
     @Autowired

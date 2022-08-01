@@ -2,6 +2,7 @@ package br.com.lucasbentes.pokedex.controller;
 
 import br.com.lucasbentes.pokedex.model.Habilidade;
 import br.com.lucasbentes.pokedex.service.HabilidadeService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/habilidade")
+@Tag(name = "Habilidade", description = "Endpoints para gerenciar as habilidades")
 public class HabilidadeController {
 
     @Autowired
