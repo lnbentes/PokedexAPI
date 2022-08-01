@@ -6,6 +6,9 @@ CRUD completo para a criação de um banco de dados de uma pokédex
 1. Rode o arquivo ApiPokedexApplication da aplicação
 2. Acesse http://localhost:8080/ no seu navegador ou seu programa de requisições.
 
+## Documentação no swagger
+Com a aplicação rodando, acesse o [link](http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config)
+
 ## Tabelas:
 * Pokemon:
   * nome - String;
@@ -67,3 +70,4 @@ CRUD completo para a criação de um banco de dados de uma pokédex
 * Maven
 * Postman
 * MySQL
+* Swagger
